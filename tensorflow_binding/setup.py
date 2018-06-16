@@ -79,8 +79,8 @@ extra_compile_args += ['-Wno-return-type']
 
 extra_link_args = []
 if tf.__version__ >= '1.4':
-    if os.path.exists(os.path.join(tf_src_dir, 'libtensorflow_framework.so')):
-        extra_link_args = ['-L' + tf.sysconfig.get_lib(), '-ltensorflow_framework']
+    # if os.path.exists(os.path.join(tf_src_dir, 'libtensorflow_framework.so')):
+    extra_link_args = ['-L' + tf.sysconfig.get_lib(), '-ltensorflow_framework']
 
 if (enable_gpu):
     extra_compile_args += ['-DWARPCTC_ENABLE_GPU']
